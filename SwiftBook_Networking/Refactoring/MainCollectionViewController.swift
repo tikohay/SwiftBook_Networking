@@ -17,6 +17,7 @@ class MainCollectionViewController: UICollectionViewController {
         case post = "POST"
         case ourCourses = "OurCources"
         case uploadImage = "Upload Image"
+        case downloadFile = "Download File"
     }
     
     let actions = Actions.allCases
@@ -55,6 +56,8 @@ class MainCollectionViewController: UICollectionViewController {
             performSegue(withIdentifier: "OurCources", sender: self)
         case .uploadImage:
             print("Upload Image")
+        case .downloadFile:
+            print(action.rawValue)
         }
     }
 }
