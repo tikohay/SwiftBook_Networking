@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    print("hello")
     private let url =  "https://applelives.com/wp-content/uploads/2016/03/iPhone-SE-11.jpeg"
     
     @IBOutlet weak var imageView: UIImageView!
