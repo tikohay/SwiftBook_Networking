@@ -114,7 +114,18 @@ class NetworkManager {
         request.allHTTPHeaderFields = httpHeaders
         request.httpBody = imageProperties.data
         URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response {
+                print(response)
+            }
             
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
         }
     }
 }
