@@ -12,7 +12,6 @@ class AlamofireNetworkRequest {
     
     static func sendRequest(url: String, completion: @escaping ([Course]) ->()) {
         guard let url = URL(string: url) else { return }
-        
         AF.request(url, method: .get).validate().responseJSON { response in
             
             switch response.result {
