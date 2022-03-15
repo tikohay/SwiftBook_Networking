@@ -44,7 +44,12 @@ class RequestTableViewController: UIViewController {
     
     func fetchDataWithAlamofire() {
         let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-        AlamofireNetworkRequest.sendRequest(url: jsonUrlString)
+        AlamofireNetworkRequest.sendRequest(url: jsonUrlString) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 

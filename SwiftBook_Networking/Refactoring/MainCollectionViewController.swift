@@ -18,6 +18,7 @@ class MainCollectionViewController: UICollectionViewController {
         case uploadImage = "Upload Image"
         case downloadFile = "Download File"
         case ourCoursesAlamofire = "Our courses alamofire"
+        case responseData = "ResponseData"
     }
     
     private let reuseIdentifier = "Cell"
@@ -112,17 +113,24 @@ class MainCollectionViewController: UICollectionViewController {
             dataProvider.startDownload()
         case .ourCoursesAlamofire:
             performSegue(withIdentifier: "OurCoursesWithAlamifire", sender: self)
+        case .responseData:
+            performSegue(withIdentifier: "ResponseData", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let coursesVC = segue.destination as? RequestTableViewController
+        let imageVC = segue.destination as? ViewController
         
         switch segue.identifier {
         case "OurCources":
             coursesVC?.fetchData()
         case "OurCoursesWithAlamifire":
             coursesVC?.fetchDataWithAlamofire()
+        case "showImage":
+            imageVC?.fetchImage()
+        case "ResponseData":
+            imageVC?.fetchImage()
         default:
             break
         }

@@ -199,6 +199,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showImage" id="R3E-fG-4lo"/>
                         <segue destination="iZv-U3-TDy" kind="show" identifier="OurCources" id="izd-90-OpE"/>
                         <segue destination="iZv-U3-TDy" kind="show" identifier="OurCoursesWithAlamifire" id="dJf-Iw-0ZZ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ResponseData" id="b3W-2e-3r4"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCo-fR-Shm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -226,6 +227,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dJf-Iw-0ZZ"/>
+        <segue reference="R3E-fG-4lo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">
