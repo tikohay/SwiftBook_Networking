@@ -1,0 +1,6 @@
+framework module Pods_SwiftBook_Networking {
+  umbrella header "Pods-SwiftBook_Networking-umbrella.h"
+
+  export *
+  module * { export * }
+}

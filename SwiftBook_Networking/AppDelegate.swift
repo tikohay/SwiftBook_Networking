@@ -11,9 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var bgSessionCompletionHandler: (() -> ())?
+    var testCompletion: ((String) -> ())?
+    
+    func test(completion: @escaping (String) -> Void) {
+        completion("hello")
+        testCompletion = completion
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        test { test in
+            print(test)
+        }
         return true
     }
     

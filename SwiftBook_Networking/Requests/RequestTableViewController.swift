@@ -20,7 +20,7 @@ class RequestTableViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        fetchData()
+//        fetchData()
     }
     
     func fetchData() {
@@ -40,6 +40,11 @@ class RequestTableViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func fetchDataWithAlamofire() {
+        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+        AlamofireNetworkRequest.sendRequest(url: jsonUrlString)
     }
 }
 
