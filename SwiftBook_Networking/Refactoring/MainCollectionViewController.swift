@@ -21,6 +21,7 @@ class MainCollectionViewController: UICollectionViewController {
         case responseData = "ResponseData"
         case responseString = "ResponseString"
         case response = "Response"
+        case downloadLargeImage = "DownloadLargeImage"
     }
     
     private let reuseIdentifier = "Cell"
@@ -123,6 +124,8 @@ class MainCollectionViewController: UICollectionViewController {
             AlamofireNetworkRequest.responseString(url: swiftbookApi)
         case .response:
             AlamofireNetworkRequest.response(url: swiftbookApi)
+        case .downloadLargeImage:
+            performSegue(withIdentifier: "largeImage", sender: self)
         }
     }
     
@@ -139,6 +142,8 @@ class MainCollectionViewController: UICollectionViewController {
             imageVC?.fetchImage()
         case "ResponseData":
             imageVC?.fetchImage()
+        case "largeImage":
+            imageVC?.downloadImageWithProgress()
         default:
             break
         }

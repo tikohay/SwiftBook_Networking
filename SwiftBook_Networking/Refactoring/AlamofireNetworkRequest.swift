@@ -67,4 +67,16 @@ class AlamofireNetworkRequest {
             print(string)
         }
     }
+    
+    static func downloadImageWithProgress(url: String, completion: @escaping (UIImage) -> Void) {
+        guard let url = URL(string: url) else { return }
+        
+        AF.request(url).validate().downloadProgress { progress in
+            print("totalUnitCount:\n", progress.totalUnitCount)
+            print("completedUnitCount:\n", progress.completedUnitCount)
+            print("fractionCompleted:\n", progress.fractionCompleted)
+            print("localizedDescrption:\n", progress.localizedDescription)
+            print("-------------------------------------")
+        }
+    }
 }

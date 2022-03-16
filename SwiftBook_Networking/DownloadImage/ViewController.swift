@@ -10,12 +10,15 @@ import Alamofire
 
 class ViewController: UIViewController {
     private let url =  "https://applelives.com/wp-content/uploads/2016/03/iPhone-SE-11.jpeg"
+    private let largeImageUrl = "https://i.imgur.com/3416rvI.jpg"
     
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var completedLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchImage()
+//        fetchImage()
     }
     
     func fetchImage() {
@@ -38,6 +41,12 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func downloadImageWithProgress() {
+        AlamofireNetworkRequest.downloadImageWithProgress(url: largeImageUrl) { largeImageUrl in
+            
         }
     }
 }
