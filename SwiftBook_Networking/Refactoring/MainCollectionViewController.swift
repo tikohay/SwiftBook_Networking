@@ -19,6 +19,8 @@ class MainCollectionViewController: UICollectionViewController {
         case downloadFile = "Download File"
         case ourCoursesAlamofire = "Our courses alamofire"
         case responseData = "ResponseData"
+        case responseString = "ResponseString"
+        case response = "Response"
     }
     
     private let reuseIdentifier = "Cell"
@@ -28,6 +30,7 @@ class MainCollectionViewController: UICollectionViewController {
     private var filePath: String?
     
     private let url = "https://jsonplaceholder.typicode.com/posts"
+    private let swiftbookApi = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
     
 //    let actions = ["Download Image", "GET", "POST", "Our Courses", "Upload Image"]
 
@@ -114,7 +117,12 @@ class MainCollectionViewController: UICollectionViewController {
         case .ourCoursesAlamofire:
             performSegue(withIdentifier: "OurCoursesWithAlamifire", sender: self)
         case .responseData:
-            performSegue(withIdentifier: "ResponseData", sender: self)
+//            performSegue(withIdentifier: "ResponseData", sender: self)
+            AlamofireNetworkRequest.responseData(url: url)
+        case .responseString:
+            AlamofireNetworkRequest.responseString(url: swiftbookApi)
+        case .response:
+            AlamofireNetworkRequest.response(url: swiftbookApi)
         }
     }
     
