@@ -22,6 +22,9 @@ class MainCollectionViewController: UICollectionViewController {
         case responseString = "ResponseString"
         case response = "Response"
         case downloadLargeImage = "DownloadLargeImage"
+        case postAlamofire = "POST with Alamofire"
+        case putRequest = "Put Request with alamofire"
+        case uploadImageAlamofire = "Upload image (Alamofire)"
     }
     
     private let reuseIdentifier = "Cell"
@@ -32,6 +35,7 @@ class MainCollectionViewController: UICollectionViewController {
     
     private let url = "https://jsonplaceholder.typicode.com/posts"
     private let swiftbookApi = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+    private let uploadImage = "https://api.imgur.com/3/image"
     
 //    let actions = ["Download Image", "GET", "POST", "Our Courses", "Upload Image"]
 
@@ -126,6 +130,12 @@ class MainCollectionViewController: UICollectionViewController {
             AlamofireNetworkRequest.response(url: swiftbookApi)
         case .downloadLargeImage:
             performSegue(withIdentifier: "largeImage", sender: self)
+        case .postAlamofire:
+            performSegue(withIdentifier: "PostRequest", sender: self)
+        case .putRequest:
+            performSegue(withIdentifier: "PutRequest", sender: self)
+        case .uploadImageAlamofire:
+            AlamofireNetworkRequest.uploadImage(url: uploadImage)
         }
     }
     
@@ -144,6 +154,10 @@ class MainCollectionViewController: UICollectionViewController {
             imageVC?.fetchImage()
         case "largeImage":
             imageVC?.downloadImageWithProgress()
+        case "PostRequest":
+            coursesVC?.postRequest()
+        case "PutRequest":
+            coursesVC?.putRequest()
         default:
             break
         }

@@ -13,6 +13,9 @@ class RequestTableViewController: UIViewController {
     private var courseName: String?
     private var courseURL: String?
     
+    private let postRequestUrl = "https://jsonplaceholder.typicode.com/posts"
+    private let putRequestUrl = "https://jsonplaceholder.typicode.com/posts/1"
+    
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -51,6 +54,26 @@ class RequestTableViewController: UIViewController {
             }
         }
     }
+    
+    func postRequest() {
+        AlamofireNetworkRequest.postRequest(url: postRequestUrl) { courses in
+            self.courses = courses
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func putRequest() {
+        AlamofireNetworkRequest.putRequest(url: putRequestUrl) { courses in
+            self.courses = courses
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension RequestTableViewController: UITableViewDataSource {
@@ -65,7 +88,7 @@ extension RequestTableViewController: UITableViewDataSource {
             
         let course = courses[indexPath.row]
         
-        cell.textLabel?.text = "\(String(describing: course.name)) \(course.numberOfLessons)"
+        cell.textLabel?.text = "\(String(describing: course.name)) \(String(describing: course.numberOfLessons))"
         cell.textLabel?.numberOfLines = 0
         
 //        DispatchQueue.global().async {
