@@ -45,8 +45,16 @@ class ViewController: UIViewController {
     }
     
     func downloadImageWithProgress() {
-        AlamofireNetworkRequest.downloadImageWithProgress(url: largeImageUrl) { largeImageUrl in
-            
+        AlamofireNetworkRequest.completed = { string in
+            self.completedLabel.text = string
+        }
+        
+        AlamofireNetworkRequest.onProgress = { progress in
+            self.progressView.progress = Float(progress)
+        }
+        
+        AlamofireNetworkRequest.downloadImageWithProgress(url: largeImageUrl) { image in
+            self.imageView.image = image
         }
     }
 }

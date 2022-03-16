@@ -10,6 +10,9 @@ import Alamofire
 
 class AlamofireNetworkRequest {
     
+    static var onProgress: ((Double) -> Void)?
+    static var completed: ((String) -> Void)?
+    
     static func sendRequest(url: String, completion: @escaping ([Course]) ->()) {
         guard let url = URL(string: url) else { return }
         AF.request(url, method: .get).validate().responseJSON { response in
@@ -71,12 +74,37 @@ class AlamofireNetworkRequest {
     static func downloadImageWithProgress(url: String, completion: @escaping (UIImage) -> Void) {
         guard let url = URL(string: url) else { return }
         
-        AF.request(url).validate().downloadProgress { progress in
+//        AF.request(url, method: .get).responseData { response in
+//            print(response.response?.statusCode)
+//        }
+        
+        AF.request(url, method: .get).validate().downloadProgress { progress in
             print("totalUnitCount:\n", progress.totalUnitCount)
             print("completedUnitCount:\n", progress.completedUnitCount)
             print("fractionCompleted:\n", progress.fractionCompleted)
             print("localizedDescrption:\n", progress.localizedDescription)
-            print("-------------------------------------")
+            print("----------------------")
+            
+            self.onProgress?(progress.fractionCompleted)
+            self.completed?(progress.localizedDescription)
+        }.response { response in
+            guard
+                let data = response.data,
+                let image = UIImage(data: data)
+            else { return }
+            
+            DispatchQueue.main.async {
+                completion(image)
+            }
         }
+        
+//        AF.download(url).validate().downloadProgress { progress in
+//            print("hello")
+////            print("totalUnitCount:\n", progress.totalUnitCount)
+////            print("completedUnitCount:\n", progress.completedUnitCount)
+////            print("fractionCompleted:\n", progress.fractionCompleted)
+////            print("localizedDescrption:\n", progress.localizedDescription)
+////            print("----------------------")
+//        }
     }
 }
