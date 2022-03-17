@@ -22,9 +22,9 @@ class LoginViewController: UIViewController {
         
         setupViews()
         
-        if let token = AccessToken.current, !token.isExpired {
-            print(token)
-        }
+//        if let token = AccessToken.current, !token.isExpired {
+//            print(token)
+//        }
     }
     
     private func setupViews() {

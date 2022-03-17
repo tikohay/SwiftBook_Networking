@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import FBSDKLoginKit
 
 class MainCollectionViewController: UICollectionViewController {
     
@@ -45,6 +46,7 @@ class MainCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         registreForNotification()
+        checkLoggedIn()
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         guard let completion = appDelegate?.testCompletion else { return }
@@ -178,5 +180,20 @@ extension MainCollectionViewController {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
         let request = UNNotificationRequest(identifier: "TransferComplete", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+}
+
+extension MainCollectionViewController {
+    private func checkLoggedIn() {
+        if let token = AccessToken.current, !token.isExpired {
+            print(token)
+        } else {
+            DispatchQueue.main.async {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.present(loginViewController, animated: true, completion: nil)
+                return
+            }
+        }
     }
 }
