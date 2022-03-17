@@ -7,4 +7,6 @@ target 'SwiftBook_Networking' do
 
   # Pods for SwiftBook_Networking
 	pod 'Alamofire', '~> 5.5'
+	pod 'FBSDKLoginKit'
+	pod 'FBSDKCoreKit'
 end

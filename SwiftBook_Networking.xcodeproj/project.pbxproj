@@ -13,6 +13,7 @@
 		E811358427DF530500E4AA24 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811358327DF530500E4AA24 /* NetworkManager.swift */; };
 		E811358727DF63F100E4AA24 /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811358627DF63F100E4AA24 /* ImageProperties.swift */; };
 		E811358927DF83FD00E4AA24 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811358827DF83FD00E4AA24 /* DataProvider.swift */; };
+		E85EE97F27E37CCB006C1DF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EE97E27E37CCB006C1DF7 /* LoginViewController.swift */; };
 		E887D4AD27E0C58C00D1023F /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */; };
 		E8A858F227DDF7B500767E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F127DDF7B500767E7C /* AppDelegate.swift */; };
 		E8A858F427DDF7B500767E7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F327DDF7B500767E7C /* SceneDelegate.swift */; };
@@ -37,6 +38,8 @@
 		E811358327DF530500E4AA24 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E811358627DF63F100E4AA24 /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		E811358827DF83FD00E4AA24 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		E85EE97C27E36C71006C1DF7 /* SwiftBook_Networking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftBook_Networking.entitlements; sourceTree = "<group>"; };
+		E85EE97E27E37CCB006C1DF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		E8A858EE27DDF7B500767E7C /* SwiftBook_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBook_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A858F127DDF7B500767E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 				0B725132DD06793E96C853E0 /* Pods-SwiftBook_Networking.debug.xcconfig */,
 				9DC525E4AAFAD76DCBC14872 /* Pods-SwiftBook_Networking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,6 +98,14 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
+		E85EE97D27E37CBC006C1DF7 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				E85EE97E27E37CCB006C1DF7 /* LoginViewController.swift */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
 		E8A858E527DDF7B500767E7C = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +127,10 @@
 		E8A858F027DDF7B500767E7C /* SwiftBook_Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E85EE97C27E36C71006C1DF7 /* SwiftBook_Networking.entitlements */,
 				E8A858F127DDF7B500767E7C /* AppDelegate.swift */,
 				E8A858F327DDF7B500767E7C /* SceneDelegate.swift */,
+				E85EE97D27E37CBC006C1DF7 /* Facebook */,
 				E811358527DF63D600E4AA24 /* UploadImage */,
 				E811357E27DF4DBE00E4AA24 /* Refactoring */,
 				E8A8590727DDFF0A00767E7C /* Requests */,
@@ -287,6 +299,7 @@
 				E8A8591327DE232500767E7C /* WebViewController.swift in Sources */,
 				E811358427DF530500E4AA24 /* NetworkManager.swift in Sources */,
 				E811358927DF83FD00E4AA24 /* DataProvider.swift in Sources */,
+				E85EE97F27E37CCB006C1DF7 /* LoginViewController.swift in Sources */,
 				E8A858F427DDF7B500767E7C /* SceneDelegate.swift in Sources */,
 				E8A8591127DE21E200767E7C /* RequestTableViewCell.swift in Sources */,
 				E811358227DF4E0200E4AA24 /* CollectionViewCell.swift in Sources */,
@@ -437,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftBook_Networking/SwiftBook_Networking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -465,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftBook_Networking/SwiftBook_Networking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
