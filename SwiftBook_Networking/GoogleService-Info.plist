@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>234425465865-2tlsr4t3l2u30eqem26gpecdek1rvv37.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.234425465865-2tlsr4t3l2u30eqem26gpecdek1rvv37</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDot6wQFvskaG0hJowj6fT9943G0k3kM1E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>234425465865</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.MVP-App.SwiftBook-Networking</string>
+	<key>PROJECT_ID</key>
+	<string>swiftbooknetwork-f2d4d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftbooknetwork-f2d4d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:234425465865:ios:4bf7a0f27bd80a98e50cd8</string>
+</dict>
+</plist>

@@ -7,6 +7,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         test { test in
             print(test)
         }
+        
+        FirebaseApp.configure()
+        
         return true
     }
     

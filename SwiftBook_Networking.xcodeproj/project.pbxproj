@@ -15,6 +15,7 @@
 		E811358927DF83FD00E4AA24 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811358827DF83FD00E4AA24 /* DataProvider.swift */; };
 		E85EE97F27E37CCB006C1DF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EE97E27E37CCB006C1DF7 /* LoginViewController.swift */; };
 		E85EE98127E383CB006C1DF7 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EE98027E383CB006C1DF7 /* UserProfileViewController.swift */; };
+		E85EE98527E39FDA006C1DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E85EE98427E39FDA006C1DF7 /* GoogleService-Info.plist */; };
 		E887D4AD27E0C58C00D1023F /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */; };
 		E8A858F227DDF7B500767E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F127DDF7B500767E7C /* AppDelegate.swift */; };
 		E8A858F427DDF7B500767E7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F327DDF7B500767E7C /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		E85EE97C27E36C71006C1DF7 /* SwiftBook_Networking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftBook_Networking.entitlements; sourceTree = "<group>"; };
 		E85EE97E27E37CCB006C1DF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E85EE98027E383CB006C1DF7 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		E85EE98427E39FDA006C1DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		E8A858EE27DDF7B500767E7C /* SwiftBook_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBook_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A858F127DDF7B500767E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				E8A858FA27DDF7B700767E7C /* Assets.xcassets */,
 				E8A858FC27DDF7B700767E7C /* LaunchScreen.storyboard */,
 				E8A858FF27DDF7B700767E7C /* Info.plist */,
+				E85EE98427E39FDA006C1DF7 /* GoogleService-Info.plist */,
 			);
 			path = SwiftBook_Networking;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				E8A858FE27DDF7B700767E7C /* LaunchScreen.storyboard in Resources */,
 				E8A858FB27DDF7B700767E7C /* Assets.xcassets in Resources */,
 				E8A858F927DDF7B500767E7C /* Main.storyboard in Resources */,
+				E85EE98527E39FDA006C1DF7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

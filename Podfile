@@ -9,4 +9,5 @@ target 'SwiftBook_Networking' do
 	pod 'Alamofire', '~> 5.5'
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKCoreKit'
+	pod 'Firebase/Auth'
 end
