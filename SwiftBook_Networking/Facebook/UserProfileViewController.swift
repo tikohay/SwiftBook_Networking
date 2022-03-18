@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class UserProfileViewController: UIViewController {
     

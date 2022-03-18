@@ -38,18 +38,18 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleCustomFBLogin() {
-        LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { result, error in
+        LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
             
             guard let result = result else { return }
-            
             if result.isCancelled { return }
             else {
                 self.signIntoFirebase()
                 self.openMainViewController()
+                self.fetchFacebookFields()
             }
         }
     }
@@ -60,6 +60,27 @@ class LoginViewController: UIViewController {
         guard let accessTokenString = accessToken?.tokenString else { return }
         
         let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
+        Auth.auth().signIn(with: credentials) { user, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            print("Successfully logged in with our FB user: ", user!)
+        }
+    }
+        
+    private func fetchFacebookFields() {
+        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { _, result, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let userData = result as? [String: Any] {
+                print(userData)
+            }
+        }
     }
     
     private func openMainViewController() {
@@ -79,6 +100,9 @@ extension LoginViewController: LoginButtonDelegate {
             print(error)
             return
         }
+        
+        
+        fetchFacebookFields()
         
         print("Successfully logged in with facebook")
     }
