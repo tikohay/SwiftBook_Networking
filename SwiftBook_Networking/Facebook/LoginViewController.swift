@@ -8,10 +8,13 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseDatabase
+import GoogleSignIn
+import Firebase
 
 class LoginViewController: UIViewController {
     
-    var userProfiel: UserProfile?
+    var userProfile: UserProfile?
     
     lazy var fbLoginButton: UIButton = {
         let button = FBLoginButton()
@@ -29,6 +32,15 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    lazy var testButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .orange
+        button.frame = CGRect(x: 32, y: 500, width: view.frame.width - 64, height: 50)
+        button.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+        button.setTitle("Send data", for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +49,57 @@ class LoginViewController: UIViewController {
 //        if let token = AccessToken.current, !token.isExpired {
 //            print(token)
 //        }
+        
+        
     }
     
-    private func sendData() {
+    @objc func signInWithGoogle() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
+        let config = GIDConfiguration(clientID: clientID)
+        
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+            if let error = error {
+               print(error)
+               return
+             }
+
+            guard
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
+            else {
+                return
+            }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: authentication.accessToken)
+            
+            Auth.auth().signIn(with: credential) { result, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                print(result)
+            }
+        }
+    }
+    
+    @objc private func sendDataIntoFirebase() {
+        userProfile = UserProfile(id: 1, name: "Arnold", email: "test1@mail.ru")
+        
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userData = ["name": userProfile?.name, "email": userProfile?.email]
+        
+        let values = [userProfile?.id: userData]
+        
+        Database.database().reference().child("users").updateChildValues(values) { error, _ in
+            if let error = error {
+                print(error)
+                return
+            }
+            print("Successfully saved user into firebase database")
+        }
     }
     
     @objc func handleCustomFBLogin() {
@@ -96,6 +155,7 @@ class LoginViewController: UIViewController {
     private func setupViews() {
         view.addSubview(fbLoginButton)
         view.addSubview(customFBLoginButton)
+        view.addSubview(testButton)
     }
 }
 

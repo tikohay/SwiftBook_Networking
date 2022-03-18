@@ -10,4 +10,6 @@ target 'SwiftBook_Networking' do
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKCoreKit'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
+	pod 'GoogleSignIn'
 end
