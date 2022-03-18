@@ -50,7 +50,14 @@ class LoginViewController: UIViewController {
 //            print(token)
 //        }
         
+//        if GIDSignIn.sharedInstance.currentUser != nil {
+//            present(UserProfileViewController(), animated: true, completion: nil)
+//        }
         
+        if Auth.auth().currentUser?.uid != nil {
+            present(UserProfileViewController(), animated: true, completion: nil)
+        }
+        print(Auth.auth().currentUser?.uid)
     }
     
     @objc func signInWithGoogle() {
@@ -79,7 +86,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                print(result)
+                present(UserProfileViewController(), animated: true, completion: nil)
             }
         }
     }

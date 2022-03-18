@@ -185,15 +185,15 @@ extension MainCollectionViewController {
 
 extension MainCollectionViewController {
     private func checkLoggedIn() {
-        if let token = AccessToken.current, !token.isExpired {
-            print(token)
-        } else {
-            DispatchQueue.main.async {
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                self.present(loginViewController, animated: true, completion: nil)
-                return
-            }
-        }
+//        if let token = AccessToken.current, !token.isExpired {
+//            print(token)
+//        } else {
+//            DispatchQueue.main.async {
+//                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//                self.present(loginViewController, animated: true, completion: nil)
+//                return
+//            }
+//        }
     }
 }
