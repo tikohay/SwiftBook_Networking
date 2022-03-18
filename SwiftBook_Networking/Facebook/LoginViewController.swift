@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    var userProfiel: UserProfile?
+    
     lazy var fbLoginButton: UIButton = {
         let button = FBLoginButton()
         button.frame = CGRect(x: 32, y: 320, width: view.frame.width - 64, height: 50)
@@ -35,6 +37,10 @@ class LoginViewController: UIViewController {
 //        if let token = AccessToken.current, !token.isExpired {
 //            print(token)
 //        }
+    }
+    
+    private func sendData() {
+        
     }
     
     @objc func handleCustomFBLogin() {

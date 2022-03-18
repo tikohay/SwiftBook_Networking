@@ -17,6 +17,7 @@
 		E85EE98127E383CB006C1DF7 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EE98027E383CB006C1DF7 /* UserProfileViewController.swift */; };
 		E85EE98527E39FDA006C1DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E85EE98427E39FDA006C1DF7 /* GoogleService-Info.plist */; };
 		E887D4AD27E0C58C00D1023F /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */; };
+		E8A4562327E4A3BF00139A7F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A4562227E4A3BF00139A7F /* UserProfile.swift */; };
 		E8A858F227DDF7B500767E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F127DDF7B500767E7C /* AppDelegate.swift */; };
 		E8A858F427DDF7B500767E7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F327DDF7B500767E7C /* SceneDelegate.swift */; };
 		E8A858F627DDF7B500767E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A858F527DDF7B500767E7C /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		E85EE98027E383CB006C1DF7 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		E85EE98427E39FDA006C1DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E887D4AC27E0C58C00D1023F /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		E8A4562227E4A3BF00139A7F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E8A858EE27DDF7B500767E7C /* SwiftBook_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBook_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A858F127DDF7B500767E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8A858F327DDF7B500767E7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E8A8591027DE21E200767E7C /* RequestTableViewCell.swift */,
 				E8A8591227DE232500767E7C /* WebViewController.swift */,
 				E8A8591427DE32FC00767E7C /* Course .swift */,
+				E8A4562227E4A3BF00139A7F /* UserProfile.swift */,
 				E8A8591627DE389200767E7C /* WebsiteDescription.swift */,
 			);
 			path = Requests;
@@ -302,6 +305,7 @@
 				E85EE98127E383CB006C1DF7 /* UserProfileViewController.swift in Sources */,
 				E811358727DF63F100E4AA24 /* ImageProperties.swift in Sources */,
 				E887D4AD27E0C58C00D1023F /* AlamofireNetworkRequest.swift in Sources */,
+				E8A4562327E4A3BF00139A7F /* UserProfile.swift in Sources */,
 				E8A8590F27DE1FB000767E7C /* RequestTableViewController.swift in Sources */,
 				E8A858F227DDF7B500767E7C /* AppDelegate.swift in Sources */,
 				E8A8591327DE232500767E7C /* WebViewController.swift in Sources */,
